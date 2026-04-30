@@ -1,0 +1,18 @@
+@model SistemaEstagio.Models.Produto
+
+<h1>Detalhes do Produto</h1>
+<hr />
+<div>
+    <dl class="row">
+        <dt class="col-sm-3">Cliente</dt>
+        <dd class="col-sm-9">@Model.Cliente?.Nome</dd>
+        <dt class="col-sm-3">Produto</dt>
+        <dd class="col-sm-9">@Model.Nome</dd>
+        <dt class="col-sm-3">Valor</dt>
+        <dd class="col-sm-9">@Model.Valor.ToString("C")</dd>
+        <dt class="col-sm-3">Disponível</dt>
+        <dd class="col-sm-9">@(Model.Disponivel ? "Sim" : "Não")</dd>
+    </dl>
+    <a asp-action="Edit" asp-route-id="@Model.IdProduto" class="btn btn-warning">Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Voltar</a>
+</div>
